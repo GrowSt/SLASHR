@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
+    const [isScrolled, setIsScrolled] = useState(false);
     const dropdownRef = useRef(null);
 
     const toggleDropdown = (dropdown) => {
@@ -18,17 +18,28 @@ const Navbar = () => {
             }
         };
 
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
         document.addEventListener("mousedown", handleClickOutside);
+        window.addEventListener("scroll", handleScroll);
+
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
     return (
-        <nav className="bg-white border-gray-200 w-full">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-8 sm:p-10">
-                <Link to="/" href="#" className="flex items-center space-x-3">
-                    <img src="logo.svg" className="h-10" alt="Slashr Logo" />
+        <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300  ${isScrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-white "}`}>
+            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-8 sm:p-8">
+                <Link
+                    to="/"
+                    className="flex items-center space-x-3"
+                    onClick={() => setIsMenuOpen(false)}
+                >
+                    <img src="logo.svg" className="h-10" alt="Slashr Logo" loading="lazy" />
                 </Link>
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -43,12 +54,12 @@ const Navbar = () => {
                     </svg>
                 </button>
                 <div className={`${isMenuOpen ? "block" : "hidden"} w-full lg:flex lg:w-auto justify-end`} id="navbar-dropdown">
-                    <ul ref={dropdownRef} className="flex flex-col lg:flex-row font-medium p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-white">
+                    <ul ref={dropdownRef} className="flex flex-col lg:flex-row font-medium p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
                         {[{
                             title: "About us",
                             items: [
-                                { name: "Our Story", link: "/our-story" },
-                                { name: "Contact us", link: "/contact" },
+                                { name: "Our Story", link: "/about-us" },
+                                { name: "Contact us", link: "/about-us/contact-us" },
                                 { name: "Careers", link: "/careers" }
                             ]
                         }, {
@@ -72,7 +83,7 @@ const Navbar = () => {
                                 { name: "The SLASHR Journal", link: "/slashr-journal" }
                             ]
                         }].map((dropdown, index) => (
-                            <li key={index} className="relative pt-2 ">
+                            <li key={index} className="relative pt-2">
                                 <button
                                     onClick={() => toggleDropdown(index)}
                                     className="flex items-center cursor-pointer justify-between w-full py-2 px-3 text-black rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#2a6171] lg:p-0 lg:w-auto"
@@ -86,14 +97,24 @@ const Navbar = () => {
                                     <div className="absolute left-0 mt-2 w-44 bg-white rounded-lg shadow-lg z-[999] border-t-2 border-[#2a6171]">
                                         <ul className="py-2 text-sm text-gray-700">
                                             {dropdown.items.map((item, i) => (
-                                                <li key={i}><Link to={item.link} className="block px-4 py-2 hover:bg-gray-100">{item.name}</Link></li>
+                                                <li key={i}>
+                                                    <Link
+                                                        to={item.link}
+                                                        className="block px-4 py-2 hover:bg-gray-100"
+                                                        onClick={() => {
+                                                            setOpenDropdown(null);
+                                                            setIsMenuOpen(false);
+                                                        }}
+                                                    >
+                                                        {item.name}
+                                                    </Link>
+                                                </li>
                                             ))}
                                         </ul>
                                     </div>
                                 )}
                             </li>
                         ))}
-
                         <button
                             type="button"
                             className="text-white bg-[#2a6171] cursor-pointer hover:bg-[#366D7D] font-medium rounded-lg text-sm px-5 py-2.5 mt-2 lg:mt-0"
