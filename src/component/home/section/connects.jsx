@@ -1,10 +1,23 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Connects = () => {
     return (
         <div className="relative p-8 flex items-center justify-center">
-            <div className="max-w-6xl w-full flex flex-col lg:flex-row items-center gap-8">
-                <div className="flex-1 hidden justify-center pr-10 sm:flex">
+            <motion.div
+                className="max-w-6xl w-full flex flex-col lg:flex-row items-center gap-8"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+            >
+                <motion.div
+                    className="flex-1 hidden justify-center pr-10 sm:flex"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                >
                     <img
                         alt="Connects employees and inspires belonging"
                         loading="lazy"
@@ -13,21 +26,27 @@ const Connects = () => {
                         className="object-cover rounded-lg"
                         src="home/Connects-employees.webp"
                     />
-                </div>
-                <div className="flex-1 lg:text-left">
-                    <p className="font-semibold mb-2 sm:mb-5">Say hi to HR tech that
-                    </p>
-                    <h1 className="text-2xl sm:text-4xl tracking-tight font-extrabold text-[#2a6171]  uppercase">
-                        Connects employees and   <br className="hidden sm:block" /> inspires belonging
+                </motion.div>
+                <motion.div
+                    className="flex-1 lg:text-left"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                >
+                    <p className="font-semibold mb-2 sm:mb-5">Say hi to HR tech that</p>
+                    <h1 className="text-2xl sm:text-4xl tracking-tight font-extrabold text-[#2a6171] uppercase">
+                        Connects employees and <br className="hidden sm:block" /> inspires belonging
                     </h1>
                     <p className="mt-2 sm:mt-6 text-sm sm:text-base text-gray-600">
                         Ensuring your people feel included and connected is critical when your team is WFO, WFH,
                         WFAnywhere. SlasHR provides essential engagement features that drive communication, inclusion, and belonging-inspiring a remarkable experience for every employee.
                     </p>
                     <div className="mt-4 flex justify-start">
-                        <button
+                        <motion.button
                             type="button"
                             className="group cursor-pointer hover:underline flex items-center justify-center rounded-xl py-2 text-[#195262]"
+                            whileHover={{ scale: 1.05 }}
                         >
                             <span className="group text-sm sm:text-base flex w-full items-center justify-center font-medium uppercase">
                                 SEE HOW
@@ -46,10 +65,16 @@ const Connects = () => {
                                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                                 />
                             </svg>
-                        </button>
+                        </motion.button>
                     </div>
-                </div>
-                <div className="flex-1  flex justify-center  sm:hidden">
+                </motion.div>
+                <motion.div
+                    className="flex-1 flex justify-center sm:hidden"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                >
                     <img
                         alt="Connects employees and inspires belonging"
                         loading="lazy"
@@ -58,8 +83,8 @@ const Connects = () => {
                         className="object-cover rounded-lg"
                         src="home/Connects-employees.webp"
                     />
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </div>
     );
 };

@@ -5,6 +5,7 @@ import Solutions from './section/solutions';
 import Drivesdecisions from './section/drivesdecisions';
 import Employeelistening from './section/employeelistening';
 import Connects from './section/connects';
+import Contact from '../about/contact';
 const HeroSection = () => {
     return (
         <>
@@ -61,7 +62,7 @@ const HeroSection = () => {
                     >
                         <img
                             alt="App screenshot"
-                            src="hero-img.webp"
+                            src="home/hero-img.webp"
                             width={1824}
                             height={1080}
                             className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md"
@@ -72,8 +73,9 @@ const HeroSection = () => {
             </motion.section>
             <Solutions />
             <Drivesdecisions />
-            < Employeelistening />
-            < Connects />
+            <Employeelistening />
+            <Connects />
+            <Contact />
         </>
     );
 };

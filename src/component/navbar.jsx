@@ -1,11 +1,17 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
     const [isScrolled, setIsScrolled] = useState(false);
     const dropdownRef = useRef(null);
+    const location = useLocation();
+
+    useEffect(() => {
+        // Scroll to top on route change
+        window.scrollTo(0, 0);
+    }, [location]);
 
     const toggleDropdown = (dropdown) => {
         setOpenDropdown(openDropdown === dropdown ? null : dropdown);
@@ -71,7 +77,7 @@ const Navbar = () => {
                                 { name: "Reporting and data dashboard", link: "/reporting-dashboard" }
                             ]
                         }, {
-                            title: "Why slashr",
+                            title: "Why slasHR",
                             items: [
                                 { name: "Customer Service", link: "/customer-service" },
                                 { name: "HR Solutions", link: "/hr-solutions" }
