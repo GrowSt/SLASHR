@@ -125,8 +125,9 @@ const Navbar = () => {
                             type="button"
                             className="text-white bg-[#2a6171] cursor-pointer hover:bg-[#366D7D] font-medium rounded-lg text-sm px-5 py-2.5 mt-2 lg:mt-0"
                         >
-                            BOOK A FREE DEMO
+                            <Link to={"/book-a-free-demo"} onClick={() => setIsMenuOpen(false)}> BOOK A FREE DEMO </Link>
                         </button>
+
                     </ul>
                 </div>
             </div>

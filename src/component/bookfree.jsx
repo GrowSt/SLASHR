@@ -5,7 +5,7 @@ import "react-phone-input-2/lib/style.css";
 
 
 
-const Contact = () => {
+const BookFree = () => {
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -45,14 +45,14 @@ const Contact = () => {
             viewport={{ once: true, amount: 0.2 }}
         >
             <div
-                className="p-6 w-full max-w-4xl sm:max-w-7xl rounded-2xl bg-cover bg-center shadow-lg"
+                className="p-6 w-full max-w-4xl sm:max-w-6xl rounded-2xl bg-cover bg-center shadow-lg"
                 style={{ backgroundImage: "url('https://i.imghippo.com/files/uBk9630bGg.png')" }}
             >
                 <h2 className="text-3xl sm:text-5xl font-bold text-white text-center mb-4 mt-6 uppercase">
-                    Contact Us
+                    Book a Free Demo
                 </h2>
                 <p className="sm:text-xl font-bold text-white text-center mb-6">
-                    We want to hear from you. Let us know how we can help.
+                    See how SlasHR can help your company.
                 </p>
                 <div className="max-w-3xl w-full bg-white shadow-md rounded-lg px-6 sm:px-10 py-8 mx-auto m-10">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -141,4 +141,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default BookFree;
