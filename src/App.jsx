@@ -7,6 +7,7 @@ import About from "./component/about/about";
 import Contact from "./component/about/contact";
 import BookFree from './component/bookfree';
 import LoadingScreen from "./component/loading";
+import NotFound from "./component/notfound"; // Importing NotFound component
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -23,6 +24,7 @@ function App() {
             <Route path="/about-us" element={<About />} />
             <Route path="/about-us/contact-us" element={<Contact />} />
             <Route path="/book-a-free-demo" element={<BookFree />} />
+            <Route path="*" element={<NotFound />} />  {/* Handle 404 errors */}
           </Routes>
           <Footer />
         </Router>
