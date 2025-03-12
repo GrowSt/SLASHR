@@ -3,18 +3,18 @@ import { motion } from "framer-motion";
 
 const Solutions = () => {
     return (
-        <section className="relative p-8 flex items-center justify-center">
+        <section className="relative p-5 pt-16 sm:pt-2 flex items-center justify-center">
             <motion.div
                 className="max-w-6xl w-full flex flex-col lg:flex-row items-center gap-5"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
             >
                 <motion.div
                     className="flex-1 lg:text-left"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
@@ -52,8 +52,8 @@ const Solutions = () => {
                 </motion.div>
                 <motion.div
                     className="flex-1 sm:flex justify-center sm:pl-10"
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
                 >

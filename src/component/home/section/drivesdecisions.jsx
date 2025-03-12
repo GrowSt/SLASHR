@@ -3,18 +3,18 @@ import { motion } from "framer-motion";
 
 const Drivesdecisions = () => {
     return (
-        <div className="relative p-8 flex items-center justify-center">
+        <div className="relative p-5 flex items-center justify-center">
             <motion.div
                 className="max-w-6xl w-full flex flex-col lg:flex-row items-center gap-8"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
             >
                 <motion.div
                     className="flex-1 hidden justify-center pr-10 sm:flex"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
@@ -29,14 +29,14 @@ const Drivesdecisions = () => {
                 </motion.div>
                 <motion.div
                     className="flex-1 lg:text-left"
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    <p className="font-semibold mb-2 sm:mb-5">Say hi to HR tech that</p>
+                    <p className="font-semibold mb-2 sm:mb-5">Say hi to HR tech that </p>
                     <h1 className="text-2xl sm:text-4xl tracking-tight font-extrabold text-[#2a6171] uppercase">
-                        Drives decisions  <br className="hidden sm:block" /> with data
+                        Drives decisions <br className="hidden sm:block" />  with data
                     </h1>
                     <p className="mt-2 sm:mt-6 text-sm sm:text-base text-gray-600">
                         HR is a key driver of business success, and SlasHr HRIS gives you the data to prove it. SlasHr advanced analytics let you easily track important KPIs and impact on business goals. And, because SlasHr is used by all employees, you benefit from vast amounts of rich data, which means stronger insights for better decision making.
@@ -69,8 +69,8 @@ const Drivesdecisions = () => {
                 </motion.div>
                 <motion.div
                     className="flex-1 flex justify-center sm:hidden"
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
                 >

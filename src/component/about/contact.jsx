@@ -38,7 +38,7 @@ const Contact = () => {
 
     return (
         <motion.section
-            className="relative flex flex-col items-center justify-center w-full mt-32 px-4 sm:px-6 lg:px-8"
+            className="relative flex flex-col items-center justify-center w-full mt-28 px-4 sm:px-6 lg:px-8"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
