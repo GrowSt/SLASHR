@@ -1,19 +1,58 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import Solutions from './section/solutions';
-import Drivesdecisions from './section/drivesdecisions';
-import Employeelistening from './section/employeelistening';
-import Connects from './section/connects';
-import Contact from '../about/contact';
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Solutions from "./section/solutions";
+import Drivesdecisions from "./section/drivesdecisions";
+import Employeelistening from "./section/employeelistening";
+import Connects from "./section/connects";
+import Contact from "../about/contact";
+
 const HeroSection = () => {
+    // ✅ Dynamically update page title and meta tags
+    useEffect(() => {
+        document.title = "Slashr - Award-winning HR system for all your HRIS needs";
+
+        // Update Meta Description
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+            metaDescription.setAttribute("content", "Slashr is the best HR system to manage all your HRIS needs, including payroll, employee records, and performance tracking.");
+        } else {
+            const newMeta = document.createElement("meta");
+            newMeta.name = "description";
+            newMeta.content = "Slashr is the best HR system to manage all your HRIS needs, including payroll, employee records, and performance tracking.";
+            document.head.appendChild(newMeta);
+        }
+
+        // Function to update Open Graph meta tags
+        const updateMetaTag = (property, content) => {
+            let metaTag = document.querySelector(`meta[property="${property}"]`);
+            if (metaTag) {
+                metaTag.setAttribute("content", content);
+            } else {
+                const newMeta = document.createElement("meta");
+                newMeta.setAttribute("property", property);
+                newMeta.setAttribute("content", content);
+                document.head.appendChild(newMeta);
+            }
+        };
+
+        updateMetaTag("og:title", "Home - Slashr HR System");
+        updateMetaTag("og:description", "Manage your HR tasks efficiently with Slashr.");
+        updateMetaTag("og:image", "https://i.imghippo.com/files/vRLw1789Enw.png");
+
+        // Cleanup function (reset metadata when leaving the page)
+        return () => {
+            document.title = "Slashr - Award-winning HR System"; // Reset title
+        };
+    }, []);
+
     return (
         <>
             <motion.section
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="mx-auto max-w-[78rem] mt-8  sm:mt-28 sm:px-6 sm:py-8 pt-20"
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="mx-auto max-w-[78rem] mt-8 sm:mt-28 sm:px-6 sm:py-8 pt-20"
             >
                 <div className="relative isolate overflow-hidden bg-[#2a6171] px-6 pt-16 sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
                     <motion.div
