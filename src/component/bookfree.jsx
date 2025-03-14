@@ -44,20 +44,6 @@ const BookFree = () => {
         };
     }, []);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
@@ -90,15 +76,9 @@ const BookFree = () => {
 
     return (
         <>
-            <head>
-                <title>Book a Free Demo - Slashr</title>
-                <meta name="description" content="Schedule a free demo with Slashr and explore our HR solutions." />
-                <meta property="og:title" content="Book a Free Demo - Slashr HR System" />
-                <meta property="og:description" content="Experience Slashr's HR software with a free demo." />
-                <meta property="og:image" content="https://i.imghippo.com/files/vRLw1789Enw.png" />
-            </head>
+
             <motion.section
-                className="relative flex flex-col items-center justify-center w-full mt-32 px-4 sm:px-6 lg:px-8"
+                className="relative flex flex-col items-center justify-center w-full mt-28 sm:mt-42 px-4 sm:px-6 lg:px-8"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import { motion } from "framer-motion";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -7,6 +6,8 @@ import "react-phone-input-2/lib/style.css";
 
 
 const Contact = () => {
+
+
 
     useEffect(() => {
         document.title = "Contact Us - Slashr HR Software Solutions";
@@ -80,19 +81,19 @@ const Contact = () => {
         <>
 
             <motion.section
-                className="relative flex flex-col items-center justify-center w-full mt-28 px-4 sm:px-6 lg:px-8"
+                className="relative flex flex-col items-center justify-center w-full mt-28 sm:mt-42 px-4 sm:px-6 lg:px-8"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.2 }}
             >
                 <div
-                    className="p-6 w-full max-w-4xl sm:max-w-7xl rounded-2xl bg-cover bg-center shadow-lg"
+                    className="p-6 w-full max-w-4xl sm:max-w-6xl rounded-2xl bg-cover bg-center shadow-lg"
                     style={{ backgroundImage: "url('https://i.imghippo.com/files/uBk9630bGg.png')" }}
                 >
-                    <h2 className="text-3xl sm:text-5xl font-bold text-white text-center mb-4 mt-6 uppercase">
+                    <h1 className="text-3xl sm:text-5xl font-bold text-white text-center mb-4 mt-6 uppercase">
                         Contact Us
-                    </h2>
+                    </h1>
                     <p className="sm:text-xl font-bold text-white text-center mb-6">
                         We want to hear from you. Let us know how we can help.
                     </p>

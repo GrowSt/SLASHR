@@ -7,6 +7,7 @@ import Employeelistening from "./section/employeelistening";
 import Connects from "./section/connects";
 import Contact from "../about/contact";
 
+
 const HeroSection = () => {
     // ✅ Dynamically update page title and meta tags
     useEffect(() => {
@@ -52,7 +53,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="mx-auto max-w-[78rem] mt-8 sm:mt-28 sm:px-6 sm:py-8 pt-20"
+                className="mx-auto max-w-[78rem] mt-23  sm:mt-32 sm:px-6 sm:py-8 "
             >
                 <div className="relative isolate overflow-hidden bg-[#2a6171] px-6 pt-16 sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
                     <motion.div
@@ -61,9 +62,9 @@ const HeroSection = () => {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left"
                     >
-                        <h2 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+                        <h1 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
                             Modern HRIS for today's businesses
-                        </h2>
+                        </h1>
                         <p className="mt-6 text-base text-pretty text-white">
                             The HR platform that powers productivity, engagement, and retention.
                         </p>

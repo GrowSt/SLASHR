@@ -12,7 +12,8 @@ const Employeelistening = () => {
                 viewport={{ once: true }}
             >
                 <motion.div
-                    className="flex-1 sm:hidden justify-center"
+
+                    className="flex-1 lg:hidden justify-center"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -47,35 +48,29 @@ const Employeelistening = () => {
                         <li>Gain insight into employee sentiment at a glance with heat maps and AI summaries</li>
                         <li>Empower managers to drive change with easy-to-read analytics on their direct reports</li>
                     </ul>
-                    <div className="mt-4 flex justify-start">
-                        <motion.button
-                            type="button"
-                            className="group cursor-pointer hover:underline flex items-center justify-center rounded-xl py-2 text-[#195262]"
-                            whileHover={{ scale: 1.05 }}
+                    <div className="mt-6 flex justify-start lg:justify-start">
+                        <a
+                            href="/"
+                            className="group flex items-center cursor-pointer rounded-xl bg-[#2a6171] hover:bg-[#366D7D] px-5 py-3 text-white font-medium text-sm sm:text-base shadow-md hover:shadow-lg transition-all"
+                            aria-label="Learn more about SlasHR HRIS"
                         >
-                            <span className="group text-sm sm:text-base flex w-full items-center justify-center font-medium uppercase">
-                                Learn More
-                            </span>
+                            <span className="group-hover:pr-4 transition-all">Learn More</span>
                             <svg
-                                className="shrink-0 group-hover:ml-8 ml-4 h-4 w-4 transition-all"
+                                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
                                 strokeWidth="2"
+                                aria-hidden="true"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
-                        </motion.button>
+                        </a>
                     </div>
                 </motion.div>
-
                 <motion.div
-                    className="flex-1 hidden sm:flex justify-center pr-10"
+                    className="flex-1 hidden lg:flex justify-center pr-10"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -91,7 +86,7 @@ const Employeelistening = () => {
                     />
                 </motion.div>
             </motion.div>
-        </div>
+        </div >
     );
 };
 

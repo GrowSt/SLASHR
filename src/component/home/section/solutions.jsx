@@ -24,31 +24,27 @@ const Solutions = () => {
                     <p className="mt-2 sm:mt-6 text-sm sm:text-base text-gray-600">
                         When we design our software, we think first of the end user, the one who will use our software in front of their screen. Our software aims to simplify their lives, whether they are a simple employee or an administrator of our solutions. Only then do we think about the CFO, HR director or CEO who are often the decision makers when purchasing one of our software.
                     </p>
-                    <div className="mt-4 flex justify-start">
-                        <motion.button
-                            type="button"
-                            className="group cursor-pointer hover:underline flex items-center justify-center rounded-xl py-2 text-[#195262]"
-                            whileHover={{ scale: 1.05 }}
+                    <div className="mt-6 flex justify-start lg:justify-start">
+                        <a
+                            href="/"
+                            className="group flex items-center cursor-pointer rounded-xl bg-[#2a6171] hover:bg-[#366D7D] px-5 py-3 text-white font-medium text-sm sm:text-base shadow-md hover:shadow-lg transition-all"
+                            aria-label="Learn more about SlasHR HRIS"
                         >
-                            <span className="group text-sm sm:text-base flex w-full items-center justify-center font-medium uppercase">
-                                Learn More
-                            </span>
+                            <span className="group-hover:pr-4 transition-all">Learn More</span>
                             <svg
-                                className="shrink-0 group-hover:ml-8 ml-4 h-4 w-4 transition-all"
+                                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
                                 strokeWidth="2"
+                                aria-hidden="true"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
-                        </motion.button>
+                        </a>
                     </div>
+
                 </motion.div>
                 <motion.div
                     className="flex-1 sm:flex justify-center sm:pl-10"
