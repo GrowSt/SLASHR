@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Streamline = () => {
     return (
         <motion.section
-            className="gap-16 items-center py-8 px-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6   sm:mt-28"
+            className="gap-16 items-center py-8 px-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 mt-22 lg:py-8 lg:px-6   sm:mt-28"
             initial={{ opacity: 0, y: 50 }} // Start hidden & move up
             whileInView={{ opacity: 1, y: 0 }} // Animate in when visible
             transition={{ duration: 0.8, ease: "easeOut" }}
